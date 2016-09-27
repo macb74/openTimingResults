@@ -119,7 +119,7 @@ function showRaceList() {
 					<td><?php echo substr($row['start'], 10); ?></td>
 					<td>
 							<a class="btn btn-default btn-small-border" data-toggle="tooltip" title="Bildschirmliste" onclick="javascript:showContent('showErgebnisse', <?php echo $row['ID']; ?>)">
-								Ergebnisliste Gesamt
+								Ergebnisliste Gesamt / Urkunden
 							</a>
 
 							<a class="btn btn-default btn-small-border" data-toggle="tooltip" title="PDF Gesammt" href="exportPDF.php?action=ergebnisGesamt&id=<?php echo $row['ID']; ?>" target="_new">
