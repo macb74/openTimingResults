@@ -66,7 +66,7 @@ function showErgebnisse() {
 				<tr>
 					<td><?php echo $i; ?></td>
 					<td><?php echo $row['stnr']; ?></td>
-					<td><a href="index.php?func=teilnehmer&id=<?php echo $row['ID'] ?>&nextFunc=auswertung"><?php echo $row['nachname'].", ".$row['vorname']; ?></a></td>
+					<td><a href="urkundenPDF.php?action=einzel&id=<?php echo $row['ID']; ?>" target="_new"><?php echo $row['nachname'].", ".$row['vorname']; ?></a></td>
 					<td><?php echo $row['verein']; ?></td>
 					<?php if ($rd['rundenrennen'] == 0) { echo "<td>".$row['jahrgang']."</td>"; } ?>
 					<?php if ($rd['rundenrennen'] == 0) { echo "<td>".$row['geschlecht']."</td>"; } ?>
@@ -76,7 +76,7 @@ function showErgebnisse() {
 					<td <?php echo $sameTimeAsBefore; ?>><?php echo $row['zeit'].$umt; ?></td>
 					<td><?php echo $row['platz']; ?></td>
 					<td><?php echo $row['akplatz']; ?></td>
-					<td><a href="urkundenPDF.php?action=einzel&tid=<?php echo $row['ID']; ?>" target="_new">Urkunde</a></td>
+					<td><a href="urkundenPDF.php?action=einzel&id=<?php echo $row['ID']; ?>" target="_new">Urkunde</a></td>
 				</tr>
 			
 <?php	

@@ -74,12 +74,6 @@ if((stristr($_SERVER["SCRIPT_NAME"], 'test') !== FALSE) || (stristr($config['dbn
 	
 	<script src="js/jquery-2.1.4.js"></script>
 	
-	<script>
-		/*** Handle jQuery plugin naming conflict between jQuery UI and Bootstrap ***/
-		$.widget.bridge('uibutton', $.ui.button);
-		$.widget.bridge('uitooltip', $.ui.tooltip);
-	</script>
-
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="js/opentiming.js"></script>
     <script src="js/base64.js"></script>
