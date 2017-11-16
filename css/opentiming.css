@@ -180,3 +180,27 @@ table {
 .modal-button {
   padding: 0px 0px 15px 0px;
 }
+
+@media screen and (max-width: 767px) {
+  table {
+    font-size: 12px;
+  }
+  .btn {
+    font-size: 12px;
+  }
+  .table-responsive {
+    border: none;
+  }
+  .page-header {
+  	border-bottom: none;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  h3, .h3 {
+    font-size: 16px;
+  }
+  .content-table {
+    padding-top: 0px;
+  }
+}

@@ -54,13 +54,16 @@ function showErgebnisse() {
 	if($result[1] > 0) {
 		foreach ($result[0] as $row) {
 			$sameTimeAsBefore = '';
+			$umt = '';
+			$mr = '';
 			
-			if($row['useManTime'] == 1 ) { $umt = '*'; } else { $umt = ''; }
-			if($row['man_runden'] != 0 ) { $mr = '*'; } else { $mr = ''; }	
+			/*
+			if($row['useManTime'] == 1 ) { $umt = '*'; }
+			if($row['man_runden'] != 0 ) { $mr = '*'; }
 			if (($dataSetBefore['zeit'] == $row['zeit']) && ($dataSetBefore['klasse'] == $row['klasse'])) { 
 				$sameTimeAsBefore = 'style="font-weight:bold"';
 			} 
-
+            */
 ?>
 			
 				<tr>

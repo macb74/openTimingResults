@@ -46,7 +46,7 @@ function sec2Time($sec){
 
 
 function showRaceList() {
-	
+    
 ?>
 
 	<script>
@@ -85,16 +85,12 @@ function showRaceList() {
 		});
 	
 	</script>
-
-	<h3>Auswertung</h3>
 	
 	<div class="table-responsive">
 		<table class="table table-striped table-vcenter">
 			<thead>
 				<tr>
-					<th>ID</th>
 					<th>Titel</th>
-					<th>Start</th>
 					<th>Ergebnisse</th>
 				</tr>
 			</thead>
@@ -109,31 +105,31 @@ function showRaceList() {
 	if($result[1] > 0) {
 		foreach ($result[0] as $row) {
 
-			$count = getCountRunner($row['ID']);
+		    $rd = getRennenData($row['ID']);
+			//$count = getCountRunner($row['ID']);
 			
 ?>
 
 				<tr>
-					<td><?php echo $row['ID']; ?></td>
-					<td><?php echo $row['titel']; ?> <small><?php echo $row['untertitel']; ?> (<?php echo $count[0]; ?> / <span id="finisher-<?php echo $row['ID']; ?>"><?php echo $count[1] ?></span>)</small></td>
-					<td><?php echo substr($row['start'], 10); ?></td>
+					<td><?php echo $row['titel']; ?> <small><?php echo $row['untertitel']; ?></small></td>
 					<td>
 							<a class="btn btn-default btn-small-border" data-toggle="tooltip" title="Bildschirmliste" onclick="javascript:showContent('showErgebnisse', <?php echo $row['ID']; ?>)">
-								Ergebnisliste Gesamt / Urkunden
+								Ergebnisliste / Urkunden
 							</a>
 
 							<a class="btn btn-default btn-small-border" data-toggle="tooltip" title="PDF Gesammt" href="exportPDF.php?action=ergebnisGesamt&id=<?php echo $row['ID']; ?>" target="_new">
-								<i class="fa fa-file-pdf-o"></i> Ergebnisliste Gesamt
+								<i class="fa fa-file-pdf-o"></i> Gesamt
 							</a>
 
 							<a class="btn btn-default btn-small-border" data-toggle="tooltip" title="PDF nach Klassen" href="exportPDF.php?action=ergebnisKlasse&id=<?php echo $row['ID']; ?>" target="_new">
-								<i class="fa fa-file-pdf-o"></i> Ergebnisliste nach Klassen
+								<i class="fa fa-file-pdf-o"></i> nach Klassen
 							</a>
-
+						<?php if( $rd['teamDeaktivated'] != 1) { ?>
 							<a class="btn btn-default btn-small-border" data-toggle="tooltip" title="PDF Ergebnisse Mannschaft" href="exportPDF.php?action=ergebninsMannschaft&id=<?php echo $row['ID']; ?>" target="_new">
-								<i class="fa fa-file-pdf-o"></i> Ergebnisliste Mannschaft
+								<i class="fa fa-file-pdf-o"></i>  Mannschaft
 							</a>
-						<?php if($row['rundenrennen'] == 1) {?>
+						<?php } ?>
+						<?php if($row['rundenrennen'] == 1) { ?>
 							<a class="btn btn-default btn-small-border" data-toggle="tooltip" title="PDF Rundenzeiten" href="exportRundenzeiten.php?&id=<?php echo $row['ID']; ?>" target="_new">
 								<i class="fa fa-file-pdf-o"></i> Rundenzeiten
 							</a>

@@ -63,7 +63,8 @@ if((stristr($_SERVER["SCRIPT_NAME"], 'test') !== FALSE) || (stristr($config['dbn
 	<meta http-equiv="description" content="openTiming SportsTiming" />
 	<meta http-equiv="Content-Language" content="de" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+		
 	<meta name="decorator" content="main" />
 	
 	<title>openTiming</title>

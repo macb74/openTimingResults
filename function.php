@@ -106,6 +106,9 @@ function getRennenData($rennen) {
 		$rd['untertitel']	= $row['untertitel'];
 		$rd['vID']			= $row['vID'];
 		$rd['lockRace']		= $row['lockRace'];
+		$rd['roc']		    = $row['roc'];
+		$rd['teamTogetherWith'] = $row['teamTogetherWith'];
+		$rd['teamDeaktivated']  = $row['teamDeaktivated'];
 	}
 	return $rd;
 }
@@ -153,5 +156,15 @@ function filterParameters($array) {
 	}
  	return $array;
 	 
+}
+
+function checkTeamTogetherWith($rennen, $teamTogetherWithString) {
+    if ($teamTogetherWithString != '' && $teamTogetherWithString != '[""]') {
+        $teamTogetherWith = json_decode($teamTogetherWithString, true);
+        foreach ($teamTogetherWith as $item) {
+            $rennen = $rennen.",".$item;
+        }
+    }
+    return $rennen;
 }
 ?>
